@@ -1,0 +1,614 @@
+// COLORS
+$myWhite: #FEFFFF;
+$myGrey: #3C3F36;
+$myGrey2: #aeaeae;
+$myGrey3: #757575;
+$myGrey4: #333333;
+$myGrey5: #222222;
+$myGrey6: #656565;
+$myGreen: #94ca78;
+$myGreen2: #82a76d;
+$myYellow: #EC971F;
+$myWhite2: #EBE9DC;
+$myBlue: #72918B;
+$myRed: #d9534f;
+
+* {
+  -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -moz-transition: color 0.1s ease-in, background 0.2s ease-in;
+  -ms-transition: color 0.1s ease-in, background 0.2s ease-in;
+  -o-transition: color 0.1s ease-in, background 0.2s ease-in;
+  transition: color 0.1s ease-in, background 0.2s ease-in;
+}
+
+body {
+  padding-top: 50px;
+  background-color: $myWhite2;
+  color: $myGrey;
+  font-weight: 300;
+  font-size: 16px;
+  font-family: "Roboto";
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  overflow: visible;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Preloader */
+#preloader {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:$myWhite2;
+  z-index:99999999999999;
+  visibility: hidden;
+}
+#loader {
+  width:200px;
+  height:200px;
+  position:absolute;
+  left:50%;
+  top:50%;
+  background-image:url(../img/load.gif);
+  background-repeat:no-repeat;
+  background-position:center;
+  margin:-100px 0 0 -100px;
+  visibility: hidden;
+}
+
+.js-warning {
+  z-index: 999;
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  margin-top: 30px;
+  display: inline-block;
+}
+
+.navbar-default {
+  .navbar-brand {
+    font-family: 'Roboto';
+    font-variant: small-caps;
+
+    &:hover {
+      color: $myGreen;
+    }
+  }
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
+  background-color: $myGreen;
+}
+
+.navbar-default .navbar-nav>.active>a {
+  color: $myWhite;
+
+  &:hover {
+    color: $myWhite;
+  }
+}
+
+.navbar-nav {
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-size: 1.1em;
+}
+
+.navbar, .navbar-default, .navbar-fixed-top, .navbar-brand, .navbar-nav li a {
+  // height: 15px;
+  // line-height: 15px;
+  // min-height: 45px;
+}
+
+/* Titres */
+h1, h2, h3 {
+  color: $myWhite;
+  margin: 10px 0px 70px 0px;
+  font-weight: 100;
+  font-family: "Roboto", sans-serif;
+}
+h4, h5, h6 {
+  color: $myWhite;
+  font-weight: 400;
+  font-size: 1.3em;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Paragraphes & typo */
+p {
+  margin-bottom: 25px;
+  line-height: 28px;
+  color: $myWhite;
+  font-family: 'Lato';
+}
+
+abbr[title] {
+  border-bottom: 1px dotted $myWhite;
+}
+
+.centered {
+  text-align: center;
+}
+
+/* Liens */
+a {
+  color: $myWhite;
+  word-wrap: break-word;
+}
+
+a:hover,
+a:focus {
+  outline: 0;
+  color: $myWhite2;
+  text-decoration: none;
+}
+
+a:before,
+a:after {
+  -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+  transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+hr {
+  display: block;
+  margin: 4em 0;
+  padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $myWhite2;
+  opacity: 0.9;
+}
+
+
+#home {
+  background-color: $myWhite;
+  height: 45%;
+  min-height: 350px;
+  max-height: 700px;
+  margin-top: -5px;
+  background-image: url(../img/babet_flou.jpg);
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+  position: relative;
+  color: $myWhite;
+  border-bottom: 4px solid $myWhite;
+  text-align: center;
+
+  .logo {
+    margin: 0;
+    width: 80px;
+  }
+
+  h1, h2 {
+    margin: 0px;
+    font-family: 'Roboto';
+    font-weight: 100;
+    text-align: center;
+    text-shadow: 0px 0px 10px $myGrey3;
+
+    .maj {
+      font-weight: 300;
+    }
+  }
+  h1 {
+    padding: 15px 0px 10px 0px;
+  }
+
+  .triangleCutOne {
+    position: absolute;
+    width: 120px;
+    left: 0px;
+    bottom: 0;
+    background-color: transparent;
+    border-bottom: 20px solid $myGreen;
+    border-right: 20px solid transparent;
+  }
+
+  .triangleCutTwo {
+    position: absolute;
+    left: 120px;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    border-bottom: 20px solid $myGreen;
+    border-left: 20px solid transparent;
+  }
+}
+
+#language {
+  padding: 50px 0px;
+  background-color: $myGreen;
+
+  .tooltip-js {
+    border-bottom: 1px dotted $myWhite;
+    &:hover:not(.no-hover) {
+      border-bottom: 1px solid $myWhite2;
+    }
+  }
+
+  i {
+    color: $myWhite;
+    margin-bottom: 20px;
+  }
+
+  .overview p {
+    margin-bottom: 35px;
+  }
+
+  .toggleColor {
+    float: right;
+    position: absolute;
+    right: 20px;
+    padding: 2px;
+    height: 25px;
+
+    i {
+      color: $myGrey3;
+
+      &:hover {
+        cursor: pointer;
+        color: $myGrey2;
+      }
+    }
+  }
+  blockquote {
+    background-color: $myWhite;
+    border: 1px solid $myGrey3;
+    border-left: 6px solid $myGrey3;
+    text-align: left;
+    font-family: 'Lato';
+    color: $myGrey;
+    line-height: 1.5em;
+
+    .codeDiv {
+      font-weight: bold;
+      color: $myBlue;
+    }
+    .codeId {
+      color: $myRed;
+    }
+    .codeClass {
+      color: $myYellow;
+    }
+    .codeP {
+      color: $myGrey3;
+    }
+    .codeCom {
+      color: $myGrey2;
+    }
+  }
+
+  .blockquoteTitle {
+    float: left;
+    background-color: $myGrey3;
+    border: 1px solid $myGrey6;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 7px;
+    right: 0;
+    margin: 0px auto;
+    width: 100px;
+    padding: 0px;
+    line-height: 10px;
+    height: 30px;
+    overflow: hidden;
+
+    @media (max-width: 991px) {
+      bottom: -15px;
+    }
+
+    h4 {
+      color: $myWhite;
+      margin: 0px;
+      padding: 3px;
+      font-weight: 400;
+    }
+
+}
+}
+.feature {
+  padding: 20px;
+  margin-top: 10px;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.grey {
+  color: $myGrey2!important;
+}
+
+
+#documentation {
+  background-color: $myWhite2;
+  height: 800px;
+  padding: 50px 0px;
+
+  h1, h2, h3, h4, h5, h6, p, a {
+    color: $myGrey3;
+  }
+}
+
+#download {
+  background-color: $myWhite;
+  padding: 50px 0px;
+  overflow: hidden;
+  h1, h2, h3, h4, h5, h6, p, a, i {
+    color: $myGrey3;
+    margin-bottom: 30px;
+  }
+
+  a:hover {
+    color: $myGrey2;
+  }
+
+  .download-option {
+    padding: 30px;
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover > h3, &:hover > i {
+      color: $myGreen;
+    }
+
+    i {
+      margin-bottom: 10px;
+    }
+  }
+
+  .tooltip-js {
+    border-bottom: 1px dotted $myGrey3;
+    &:hover {
+      border-bottom: 1px solid $myGrey2;
+    }
+  }
+}
+
+#more {
+  background-color: $myWhite2;
+  height: 500px;
+}
+
+footer {
+  background-color: $myGrey4;
+
+  .middle {
+    padding: 15px 0px;
+    padding-bottom: 30px;
+    overflow: hidden;
+    background-color: $myGreen2;
+
+    .talk-wrapper {
+      overflow: hidden;
+      i {
+        color: $myWhite;
+        font-size: 6em;
+      }
+    }
+
+    h4 {
+      margin: 30px 0px;
+    }
+
+    img {
+      margin: 25px 0px 25px 0px;
+      padding-right: 12px;
+    }
+
+    .border {
+      float: right;
+      height: 120px;
+      border-right: 1px solid $myWhite;
+      opacity: 0.3;
+      padding: 0;
+      margin: 25px 0px 25px 0px;
+    }
+
+    blockquote {
+      padding: 5px 15px;
+      p {
+        font-size: 0.9em;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    hr {
+      margin: 10px 0px 30px 0px;
+      opacity: 0.4;
+    }
+
+    .link {
+      font-size: 0.95em;
+      color: $myWhite;
+      opacity: 0.5;
+
+      i {
+        font-size: 0.8em;
+      }
+
+      span {
+        margin-left: 3px;
+        font-family: 'Lato';
+        font-weight: bold;
+        text-transform: lowercase;
+        font-variant: small-caps;
+      }
+      &:hover {
+        opacity: 1;
+        color: $myWhite2;
+      }
+      a:hover {
+        opacity: 1;
+        color: $myWhite;
+      }
+    }
+  }
+
+  .bottom {
+    overflow: hidden;
+
+    h3, h6 {
+      font-family: 'Raleway';
+      font-weight: bold;
+      text-transform: lowercase;
+      font-variant: small-caps;
+      margin: 0;
+
+      a {
+        color: $myGrey6;
+
+        &:hover {
+          color: $myGrey3;
+        }
+      }
+    }
+    h3 {
+      margin: 15px 0px 0px 0px;
+      font-size: 2em;
+      font-weight: normal;
+    }
+    h6 {
+      font-size: 1.2em;
+    }
+    p {
+      color: $myGrey6;
+      font-family: 'Roboto';
+      font-weight: 500;
+      text-transform: lowercase;
+      font-variant: small-caps;
+    }
+
+    i {
+      font-size: 1.5em;
+      margin: 22px 0px 0px 5px;
+      &:last-child {
+        margin-bottom: 10px;
+      }
+    }
+
+    a {
+      color: $myGrey6;
+
+      &:hover {
+        color: $myGrey3;
+      }
+    }
+
+    .copy {
+      font-family: 'Lato';
+      font-size: 0.75em;
+    }
+  }
+
+  .top {
+    overflow: hidden;
+    background-color: $myGreen;
+    padding: 15px 0px;
+    p {
+      padding: 0;
+      margin: 5px 0px;
+      font-size: 0.9em;
+      line-height: 1.2em;
+    }
+  }
+
+  .form-email {
+    margin: 20px 0px;
+  }
+
+  #email-form  {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+.v-center {
+    display:table !important;
+    height:100%;
+    width: 100%;
+
+  .content {
+      display:table-cell;
+      vertical-align:middle;
+  }
+}
+
+
+hr.semi {
+  border-top: 1px dashed $myWhite2;
+  margin: 15px 0px 20px 0px;
+  opacity: 0.6;
+}
+
+.btn {
+  font-family: 'Roboto';
+  font-weight: 300;
+
+}
+
+.italic {
+  font-style: italic;
+}
+
+cite {
+  color: $myWhite2;
+  font-family: 'Lato';
+  font-size: 0.8em;
+  font-style: italic;
+
+  &:before {
+    content: "-- ";
+  }
+}
+
+.formError {
+  font-family: 'Raleway';
+  font-size: 0.75em;
+  text-align: right;
+  color: $myRed;
+}
+
+.modal {
+  h1, h2, h3, h4, h5, h6, p, a {
+    color: $myGrey6;
+  }
+}
+
+
+.form-control:focus, textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-    input:focus {
+  border-color: $myGreen;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  outline: $myGrey auto 0px;
+}
+
+code {
+  color: $myGreen;
+}
+
+.hidden-all {
+  visibility: hidden;
+  display: none;
+}
+
+.green {
+  color: $myGreen;
+}
+
+.bold {
+  font-weight: bold;
+}

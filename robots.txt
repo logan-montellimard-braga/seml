@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /humans.txt
+Disallow: /LICENCE
+Disallow: /README
+Disallow: /404.html

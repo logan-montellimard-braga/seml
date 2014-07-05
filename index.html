@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Logan Braga">
+    <meta name="description" content="SEML (S-Expression Markup Language) project page. Markup language using LISP-style expressions.">
+
+    <title>The SEML Project</title>
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+    <![endif]-->
+  </head>
+  <body data-spy="scroll" data-offset="0" data-target="#navigation" id="top">
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="loader">&nbsp;</div>
+    </div>
+
+    <!-- IE < 7 guard -->
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Navigation -->
+    <nav>
+      <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar">&nbsp;</span>
+              <span class="icon-bar">&nbsp;</span>
+              <span class="icon-bar">&nbsp;</span>
+            </button>
+            <a class="navbar-brand" href="#top">(SEML (lang))</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="#top">Home</a></li>
+              <li><a href="#language">Language</a></li>
+              <li><a href="#documentation">Quick Tour</a></li>
+              <li><a href="#download">Download</a></li>
+              <li><a href="#more">More</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- JS Warning -->
+    <div class="container">
+      <div class="row js-warning text-center">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+          <div class="alert alert-danger alert-dismissable">
+              Please enable <strong>JavaScript</strong> in your browser to plainfully view this page.
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <section id="home" name="home">
+      <div class="v-center">
+        <div class="content">
+          <img class="logo "src="assets/img/logo_blanc.png" alt="SEML Logo"/>
+          <h1>(SEML)</h1>
+          <h2>(<span class="maj">S</span>-<span class="maj">E</span>xpression <span class="maj">M</span>arkup <span class="maj">L</span>anguage)</h2>
+          <p>No such thing as too many parentheses.</p>
+
+          <a data-toggle="tooltip" data-placement="right auto" title="Version 0.0.1" href="#download" class="tooltip-js goto btn btn-lg btn-warning"><i class="fa fa-download">&nbsp;</i>&nbsp;Download SEML</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="language" name="language">
+      <div class="container">
+
+        <div class="row centered">
+          <div class="col-md-10 col-md-offset-1">
+            <h1>(The Language)</h1>
+            <p>SEML is a markup language that compiles to clean, well-formated HTML.</p>
+
+            <div class="col-md-6">
+              <div class="blockquoteTitle">
+                <h4>SEML</h4>
+              </div>
+              <div class="toggleColor">
+                <i class="fa fa-tint" title="Toggle syntax highlighting">&nbsp;</i>
+              </div>
+              <blockquote class="smallerQuote">
+                <span class="codeCom">;; This is a (sexy) comment</span>
+                <br>
+                (<span class="codeDiv">section</span><span class="codeId">#home</span><span class="codeClass">.awesome</span>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;((<span class="codeDiv">h1</span> <span class="codeP">"This rocks !"</span>)
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="codeDiv">p</span><span class="codeClass">.center</span> <span class="codeP">"What a wonderful language, isn't it ?"</span>)))
+              </blockquote>
+            </div>
+
+            <i class="visible-sm visible-xs fa fa-angle-double-down fa-2x">&nbsp;</i>
+
+            <div class="col-md-6">
+              <div class="blockquoteTitle">
+                <h4>HTML</h4>
+              </div>
+              <div class="toggleColor">
+                <i class="fa fa-tint" title="Toggle syntax highlighting">&nbsp;</i>
+              </div>
+              <blockquote class="longuerQuote">
+                <span class="codeCom">&lt;!-- This is a (sexy) comment --&gt;</span>
+                <br>
+                &lt;<span class="codeDiv">section</span> <span class="codeId">id</span>="home" <span class="codeClass">class</span>="awesome"&gt;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="codeDiv">h1</span>&gt;<span class="codeP">This rocks !</span>&lt;/<span class="codeDiv">h1</span>&gt;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="codeDiv">p</span> <span class="codeClass">class</span>="center"&gt;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeP">What a wonderful language, isn't it ?</span>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="codeDiv">p</span>&gt;
+                <br>
+                &lt;/<span class="codeDiv">section</span>&gt;
+              </blockquote>
+            </div>
+
+          </div>
+        </div>
+        <div class="row centered">
+          <div class="col-md-6 col-md-offset-3 hidden-xs hidden-sm">
+            <img class="hidden-xs hidden-sm" src="assets/img/arrow.png" alt="Compiles to"/>
+          </div>
+        </div>
+        <div class="row centered">
+          <div class="col-md-10 col-md-offset-1">
+            <hr>
+          </div>
+        </div>
+
+        <div class="overview">
+          <div class="col-md-8 col-md-offset-2">
+            <h1 class="centered">(Overview)</h1>
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+                <p class="text-center">
+                  SEML is a powerful markup language based on Lisp-like structures, that compiles to standardized, clean and well-formatted HTML5 (and CSS3 too, soon).
+                </p>
+                <hr class="semi hidden-xs">
+              </div>
+            </div>
+            <br>
+
+            <div class="row">
+              <div class="col-sm-3 hidden-xs overview-img1">
+                <div class="v-center">
+                  <div class="content">
+                    <img class="" src="assets/img/logo_blanc.png" alt="SEML Logo"/>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-9 overview-text1">
+                <h4>S-Expressions driven</h4>
+                <p>
+                  SEML purely embodies the power of <span class="tooltip-js no-hover" data-toggle="tooltip" data-placement="top auto" title="Symbolic Expressions">S-Expressions</span>. Everything you manipulate in SEML is some kind of S-Expression, just like in Lisp and its descendants.
+                </p>
+                <h4>Flexible</h4>
+                <p>
+                  Indentation-sensible languages are cool, but sometimes you just need the flexibility of good old structures. In SEML, you choose to indent your code the way you like it. Whitespaces, tabs, or spaghetti? Whatever rows your boat.
+                </p>
+                <h4>Pragmatic</h4>
+                <p>
+                  Templating can be a repetitive task; that's why SEML includes syntactic sugar for common idioms to speed up your development time. You haven't anything new to learn, though: each one of them is a valid SEML S-Expression structure.
+                </p>
+              </div>
+            </div>
+
+            <div class="row text-right">
+              <div class="col-sm-9 overview-text2">
+                <h4>Logic-less</h4>
+                <p>
+                  SEML is logic-less, which means you can't embed external, dynamic content inside your views. This is a choice: by not being able to embed scripts, you can purely focus on the template -- and nothing else.
+                </p>
+                <h4>Consistent</h4>
+                <p>
+                  SEML goes far beyond simple, classical logic-less languages: you can't embed JavaScript nor stylesheets directly in your templates. Behind such seemingly horrid rules lies in fact a simple, well-known (but alas not always respected) concept: don't mix up everything !
+                </p>
+                <h4>Robust</h4>
+                <p>
+                  S-Expressions are quick and easy to parse, which means SEML can deliver your outputs flawlessly, in the glimpse of an eye.
+                </p>
+              </div>
+
+              <div class="col-sm-3 hidden-xs overview-img2">
+                <div class="v-center">
+                  <div class="content">
+                    <img class="" src="assets/img/logo_blanc_reverse.png" alt="SEML Logo"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+          </div>
+        </div>
+
+        <div class="credentials">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="row centered">
+              <h1>(Commitments)</h1>
+              <p>
+                Not yet convinced? Here are some less down-to-earth reasons why you should choose SEML for your everyday templating tasks.
+              </p>
+              <hr class="semi">
+            </div>
+            <div class="row">
+              <div class="col-md-4 centered feature">
+                <i class="fa fa-code fa-3x"></i>
+                <h4>Free Code</h4>
+                <p>
+                  SEML is <span class="italic">Free as in Freedom</span>, which means you are totally free to see, use, modify and share the source code while you maintain the <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="GNU/GPL website" >GNU/GPL licence</a>.
+                </p>
+              </div>
+              <div class="col-md-4 centered feature">
+                <i class="fa fa-wrench fa-3x"></i>
+                <h4>Customisable</h4>
+                <p>
+                  SEML is modular by design and fully customisable. You can change complex behaviors with a simple <a class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="YAML website" href="http://www.yaml.org/" target="_blank">YAML</a> file, and painlessly add new modules to the code.
+                </p>
+              </div>
+              <div class="col-md-4 centered feature">
+                <i class="fa fa-globe fa-3x"></i>
+                <h4>Multi Platform</h4>
+                <p>
+                  SEML is packaged as a <a class="tooltip-js" href="https://rubygems.org/" data-toggle="tooltip" data-placement="bottom" title="RubyGems website" target="_blank">Ruby Gem</a>, allowing it to be seamlessly used and managed on all major operating systems.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="documentation" name="documentation">
+      <div class="container">
+        <div class="col-md-8 col-sm-10 col-md-offset-2 col-sm-offset-1">
+          <div class="row">
+            <h1 class="centered">(Quick Tour)</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="download" name="download">
+      <div class="container">
+        <div class="col-sm-10 col-sm-offset-1">
+          <div class="row">
+            <h1 class="centered">(Download)</h1>
+            <div class="col-md-8 col-md-offset-2 text-center">
+              <p>
+                Both installation methods assume you have an operational <a href="https://www.ruby-lang.org/" target="_blank" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="Ruby website" >Ruby</a> <span class="italic">(>= 1.9)</span> environment available.
+              </p>
+              <p>
+                <span class="bold">Current version:</span> <span class="tooltip-js no-hover" data-toggle="tooltip" data-placement="top auto" title="2014/07/05">0.0.1</span>
+              </p>
+              <hr class="semi">
+            </div>
+          </div>
+
+          <div class="col-md-6 centered download-option" data-toggle="collapse" data-target="#rubygemDL">
+            <i class="fa fa-cloud-download fa-4x fa-fw"></i>
+            <h3>Ruby Gem Installation</h3>
+            <p>
+              Recommended installation. You'll need the command-line application <code>gem</code>.
+            </p>
+            <i class="fa fa-chevron-down"></i>
+            <i class="fa fa-chevron-up hidden-all"></i>
+            <div class="collapse" id="rubygemDL">
+              <hr class="semi">
+              <p>
+                Run <code>gem install seml</code> in your command line.
+                <br> And... You're done!
+              </p>
+              <p>
+                Don't forget to run <code>gem update seml</code> once in a while to stay up-to-date !
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 centered download-option" data-toggle="collapse" data-target="#githubDL">
+            <i class="fa fa-github fa-4x fa-fw"></i>
+            <h3>Github Download</h3>
+            <p>
+              Custom installation. You'll need the command-line application <code>git</code>.
+            </p>
+            <i class="fa fa-chevron-down"></i>
+            <i class="fa fa-chevron-up hidden-all"></i>
+            <div class="collapse" id="githubDL">
+              <hr class="semi">
+              <p>
+                Run <code>git clone https://github.com/loganbraga/seml</code> in your command line, and <code>cd seml</code>.
+                <br>
+                You now have a working git repository containing the source code of SEML. You should know what you want to do with it from now, right...?
+              </p>
+              <p>
+                Oh, and don't forget to run <code>git pull</code> inside the directory once in a while.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="more" name="more">
+    </section>
+
+
+
+    <footer id="footer">
+      <div class="top">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="row">
+            <div class="col-sm-6">
+              <h4>Stay in touch</h4>
+              <p>
+                You can stay up-to-date with SEML by subscribing to the newsletter. We won't use it for anything else, we swear !
+              </p>
+            </div>
+            <div class="col-sm-6 text-right form-email col-xs-12 hidden-xs">
+              <form id="subscribe-form" class="form-inline" role="form" action="" method="post">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control" placeholder="Enter email" name="email" type="email" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <button type="submit" id="form-button" class="btn btn-success"><i class="fa fa-check"></i>&nbsp;Subscribe</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="col-sm-6 centered form-email col-xs-12 visible-xs">
+              <form id="subscribe-form-mini" class="form-inline" role="form" action="" method="post">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="col-xs-8 pull-right">
+                      <input class="form-control" placeholder="Enter email" name="email" type="email" required>
+                    </div>
+                    <div class="col-xs-4 pull-left">
+                      <button type="submit" id="form-button" class="btn btn-success"><i class="fa fa-check"></i>&nbsp;Subscribe</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="middle">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="talk-wrapper">
+                <div class="col-md-3 centered talk-icon hidden-xs hidden-sm">
+                  <div class="v-center">
+                    <div class="content">
+                      <i class="fa fa-comments fa-5x"></i>
+                    </div>
+                  </div>
+                </div>
+                <h4 class="text-center">They talk about SEML</h4>
+                <div class="col-md-3 col-sm-10 col-sm-offset-1 col-md-offset-0 feature">
+                  <blockquote>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                    </p>
+                    <cite class="pull-right">John Doe</cite>
+                  </blockquote>
+                </div>
+                <div class="col-md-3 col-sm-10 col-sm-offset-1 col-md-offset-0 feature">
+                  <blockquote>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                    </p>
+                    <cite class="pull-right">John Doe</cite>
+                  </blockquote>
+                </div>
+                <div class="col-md-3 col-sm-10 col-sm-offset-1 col-md-offset-0 feature">
+                  <blockquote>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                    </p>
+                    <cite class="pull-right">John Doe</cite>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row utils">
+            <div class="col-sm-10 col-sm-offset-1 centered">
+              <hr>
+              <div class="col-xs-4 link">
+                <a href="/sitemap.html"><i class="fa fa-sitemap fa-fw"></i><span>&nbsp;Sitemap</span></a>
+              </div>
+              <div class="col-xs-4 link">
+                <a href="/documentation.html"><i class="fa fa-life-ring fa-fw"></i><span>&nbsp;Help</span></a>
+              </div>
+              <div class="col-xs-4 link">
+                <a href="" data-toggle="modal" data-target="#contactModal"><i class="fa fa-paper-plane fa-fw"></i><span>&nbsp;Contact</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="contactModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h3 class="modal-title" id="myModalLabel">Contact us</h3>
+            </div>
+            <div class="modal-body">
+              <form id="contactForm" role="form" action="" method="post" enctype="plain">
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                    <input id="name" type="text" name="name" class="form-control input-lg" placeholder="Name..." maxlength="51" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+                    <input id="email" type="email" name="email" class="form-control input-lg" placeholder="Mail..." maxlength="256" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-comment fa-fw"></i></span>
+                    <textarea id="message" class="form-control input-lg" name="message" rows="5" placeholder="Message..." maxlength="10001" required></textarea>
+                  </div>
+                </div>
+                <br>
+                <button type="submit" name="sendContactForm" id="sendContactForm" class="btn btn-lg btn-warning"><i class="fa fa-check"></i> Send</button>
+                <button type="reset" id="formReset" class="btn btn-default btn-lg"><i class="fa fa-times"></i> Reset</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom v-center">
+        <div class="col-sm-10 col-sm-offset-1">
+          <div class="row">
+            <div class="col-xs-8">
+              <div class="content">
+                <h3><a href="#top" class="goto">SEML</a></h3>
+                <h6><a href="http://loganbraga.fr/" target="_blank">Logan Braga</a></h6>
+                <p><span class="copy">&copy;</span> Logan Braga <span class="copy">2014</span> - Licence GNU/GPL</p>
+              </div>
+            </div>
+            <div class="col-xs-4 pull-right text-right">
+              <a href="http://reddit.com/" data-toggle="tooltip" class="tooltip-js" data-placement="left" title="Meet community on Reddit" target="_blank"><i class="fa fa-reddit fa-fw"></i></a>
+              <a href="https://rubygems.org/" data-toggle="tooltip" class="tooltip-js" data-placement="left" title="Download gem on RubyGems" target="_blank"><i class="fa fa-cloud-download fa-fw"></i></a>
+              <a href="https://github.com/loganbraga" data-toggle="tooltip" class="tooltip-js" data-placement="left" title="Browse code on Github" target="_blank"><i class="fa fa-github fa-fw"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/vendor/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/easing.min.js"></script>
+    <script src="assets/js/vendor/jquery.validate.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

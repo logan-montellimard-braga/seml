@@ -1,0 +1,12 @@
+/* SITE */
+    Language: English
+    Doctype: HTML5
+    Technologies: HTML5 / CSS3 / Javascript / JQuery
+    Frameworks: SASS / Compass / Coffeescript / Bootstrap
+    Tools: vim / git
+
+/* AUTHOR */
+    Name: Logan Braga
+    Role: Mockup / Webdevelopment
+    Contact: <braga dot logan at gmail dot com>
+    From: Le Puy-en-Velay, France
