@@ -250,6 +250,10 @@ hr {
   padding: 50px 0px; }
   #documentation h1, #documentation h2, #documentation h3, #documentation h4, #documentation h5, #documentation h6, #documentation p, #documentation a {
     color: #757575; }
+  #documentation .tooltip-js {
+    border-bottom: 1px dotted #757575; }
+    #documentation .tooltip-js:hover {
+      border-bottom: 1px solid #aeaeae; }
 
 #download {
   background-color: #feffff;

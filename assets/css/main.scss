@@ -340,6 +340,13 @@ hr {
   h1, h2, h3, h4, h5, h6, p, a {
     color: $myGrey3;
   }
+
+  .tooltip-js {
+    border-bottom: 1px dotted $myGrey3;
+    &:hover {
+      border-bottom: 1px solid $myGrey2;
+    }
+  }
 }
 
 #download {
