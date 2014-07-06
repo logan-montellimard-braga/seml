@@ -245,9 +245,9 @@ hr {
   color: #aeaeae !important; }
 
 #documentation {
-  background-color: #ebe9dc;
+  background-color: #feffff;
   height: 800px;
-  padding: 50px 0px; }
+  padding: 60px 0px; }
   #documentation h1, #documentation h2, #documentation h3, #documentation h4, #documentation h5, #documentation h6, #documentation p, #documentation a {
     color: #757575; }
   #documentation .tooltip-js {
@@ -256,8 +256,8 @@ hr {
       border-bottom: 1px solid #aeaeae; }
 
 #download {
-  background-color: #feffff;
-  padding: 50px 0px;
+  background-color: #ebe9dc;
+  padding: 60px 0px;
   overflow: hidden; }
   #download h1, #download h2, #download h3, #download h4, #download h5, #download h6, #download p, #download a, #download i {
     color: #757575;

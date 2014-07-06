@@ -333,9 +333,9 @@ hr {
 
 
 #documentation {
-  background-color: $myWhite2;
+  background-color: $myWhite;
   height: 800px;
-  padding: 50px 0px;
+  padding: 60px 0px;
 
   h1, h2, h3, h4, h5, h6, p, a {
     color: $myGrey3;
@@ -350,8 +350,8 @@ hr {
 }
 
 #download {
-  background-color: $myWhite;
-  padding: 50px 0px;
+  background-color: $myWhite2;
+  padding: 60px 0px;
   overflow: hidden;
   h1, h2, h3, h4, h5, h6, p, a, i {
     color: $myGrey3;
