@@ -45,6 +45,19 @@ $(document).ready(function ($) {
     $(this).children('.fa-chevron-up').toggleClass('hidden-all');
   });
 
+  // Guide collapse all
+  var closed = true;
+  $('.collapseAll').click(function() {
+    if (closed) {
+      $('#guide').find('.collapse').not("#beforeStart").collapse('show');
+      closed = false;
+    }
+    else {
+      $('#guide').find('.collapse').not("#beforeStart").collapse('hide');
+      closed = true;
+    }
+  });
+
   // Navbar smooth scroll
   links.click(function (e) {
     e.preventDefault();

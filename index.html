@@ -105,7 +105,7 @@
               <div class="toggleColor">
                 <i class="fa fa-tint" title="Toggle syntax highlighting">&nbsp;</i>
               </div>
-              <blockquote class="smallerQuote">
+              <blockquote class="smallerQuote code">
                 <span class="codeCom">;; This is a (sexy) comment</span>
                 <br>
                 (<span class="codeDiv">section</span><span class="codeId">#home</span><span class="codeClass">.awesome</span>
@@ -125,7 +125,7 @@
               <div class="toggleColor">
                 <i class="fa fa-tint" title="Toggle syntax highlighting">&nbsp;</i>
               </div>
-              <blockquote class="longuerQuote">
+              <blockquote class="longuerQuote code">
                 <span class="codeCom">&lt;!-- This is a (sexy) comment --&gt;</span>
                 <br>
                 &lt;<span class="codeDiv">section</span> <span class="codeId">id</span>="home" <span class="codeClass">class</span>="awesome"&gt;
@@ -237,7 +237,7 @@
                 <i class="fa fa-code fa-3x"></i>
                 <h4>Free Code</h4>
                 <p>
-                  SEML is <span class="italic">Free as in Freedom</span>, which means you are totally free to see, use, modify and share the source code while you maintain the <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="GNU/GPL website" >GNU/GPL licence</a>.
+                  SEML is <span class="italic">Free as in Freedom</span>, which means you are totally free to see, use, modify and share the source code while you maintain the <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="GNU/GPL website" >GNU/GPL license</a>.
                 </p>
               </div>
               <div class="col-md-4 centered feature">
@@ -331,8 +331,226 @@
           <div class="row centered">
             <h1>(Quick Start)</h1>
             <p>
-              In this part, we assume that you have already <a href="#download" class="goto tooltip-js" data-toggle="tooltip" data-placement="bottom" title="Download section">downloaded and/or installed</a> SEML and can therefore use the command-line application <code>seml</code>.
+              In this part, we assume you have already <a href="#download" class="goto tooltip-js" data-toggle="tooltip" data-placement="bottom" title="Download section">downloaded and/or installed</a> SEML and can therefore use the command-line application <code>seml</code>.
             </p>
+            <hr class="semi">
+          </div>
+
+          <div class="row text-left" id="guide">
+
+            <div class="step first">
+              <a data-toggle="collapse" data-parent="#guide" href="#beforeStart"><h4>Before starting&nbsp;</h4></a>
+              <div id="beforeStart" class="collapse in">
+                <p>
+                  SEML draws its power from S-Expression and Lisp-like structure. As such, you will obviously feel instantly <span class="italic">at home</span> if you already have experience with similar languages, but it is not a requirement.
+                  Everyone is able to grasp the power of S-Expressions after a little bit of practice !
+                </p>
+                <p>
+                  Now sit back, relax, and enjoy this quick ride that will get you started on using SEML in your everyday templating tasks...
+                  <br>
+                  <span class="bold">Hint:</span> You can click on every title to collapse the corresponding section, or you can <span class="collapseAll">collapse everything</span> at once.
+                </p>
+              </div>
+            </div>
+
+            <div class="step">
+              <a data-toggle="collapse" data-parent="#guide" href="#commandline"><h4>Using the command-line</h4></a>
+              <div id="commandline" class="collapse">
+                <p>
+                  Before we really dive in, we must agree on something: every example you will see below will have been compiled by the command-line application before showing the HTML result.
+                  But we won't write that <span class="italic">everytime</span>. That would be silly.
+                  <br>
+                  So, now, you're in: each time you'll see SEML and HTML codes side by side, you'll just know there was a compilation in-between, even if that's not written. You smart boy.
+                </p>
+                <p>
+                  Wait, now you may be wondering <span class="italic">how</span> that compilation was done. It's rather simple, in fact:
+                  <br>
+                  <code class="block">
+                    <span class="bold">seml</span> html myFile.seml myOutput.html
+                    <br>
+                    <span class="bold">seml</span> html <span class="bold">-i</span> myFile.seml <span class="bold">-o</span> myOutput.html
+                    <br>
+                    <span class="bold">seml</span> html <span class="bold">--input=</span>myFile.seml <span class="bold">--output=</span>myOutput.html
+                  </code>
+                  SEML follows POSIX conventions for command-line apps. Those three line above are equivalent: the first argument (here, 'html') is used to tell SEML you want to produce an HTML output (we explicitly state this, because SEML will soon be able to translate to CSS and XML files too).
+                  <br>
+                  <br>
+                  By default, your first argument is the input file (which can also be explicitly stated with -i or --input), and the second the output file (same with -o or --output).
+                  <br>
+                  If there's no output file, SEML will send its result to the standard terminal output. If there's no input, it will take it from standard terminal input.
+                </p>
+              </div>
+            </div>
+
+            <div class="step">
+              <a data-toggle="collapse" data-parent="#guide" href="#lispBases"><h4>Some Sexps basics</h4></a>
+              <div id="lispBases" class="collapse">
+                <p>
+                  Understanding the basics of S-Expressions is essential in order to fully master SEML.
+                </p>
+                <div class="step first">
+                  <a data-toggle="collapse" data-parent="#guide" href="#atoms"><h6>Atoms</h6></a>
+                  <div id="atoms" class="collapse in">
+                    <p>
+                      In traditional Lisp and in SEML, an atom is a part that can't be divided into something smaller on its own. That is, all of these things are valid atoms: <code>foo</code>, <code>+</code>, <code>132323</code>, <code>z</code> and <code>*abc123*</code>.
+                      <br>
+                      On the other hand, <code>4 ab</code> is not an atom (it is an insignificant group of two atoms in this context), and neither is <code>(+ 4 8)</code>, because it is a list of three atoms. Which leads us to S-Expressions.
+                    </p>
+                  </div>
+                </div>
+                <div class="step first">
+                  <a data-toggle="collapse" data-parent="#guide" href="#s-expr"><h6>S-Expressions</h6></a>
+                  <div id="s-expr" class="collapse in">
+                    <p>
+                      An S-Expression is, as wonderfully put by <a href="http://en.wikipedia.org/wiki/S-expression" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="S-Expressions on Wikipedia" target="_blank">Wikipedia</a>, either an <span class="italic">atom</span> or a group of two S-Expressions wrapped in parentheses. That is, <code>(+ 1 4)</code>, <code>(foo bar baz)</code>, <code>abc</code>, <code>(3 abc (zz y))</code> and <code>()</code> are all valid S-Expressions.
+                      <br>
+                      Similarly, <code>(4 5 (8)</code> and <code>f (gh)</code> are ill-formed S-Expressions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="step">
+              <a data-toggle="collapse" data-parent="#guide" href="#firstProg"><h4>Your first SEML</h4></a>
+              <div id="firstProg" class="collapse">
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                  vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                  no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+            </div>
+
+            <div class="step">
+              <a data-toggle="collapse" data-parent="#guide" href="#attributes"><h4>Adding attributes</h4></a>
+              <div id="attributes" class="collapse">
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                  vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                  no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+            </div>
+
+            <div class="step">
+              <a data-toggle="collapse" data-parent="#guide" href="#commenting"><h4>Commenting your code</h4></a>
+              <div id="commenting" class="collapse">
+                <p>
+                  In SEML, there are two types of comments.
+                </p>
+                <div class="step first">
+                  <a data-toggle="collapse" data-parent="#guide" href="#semlcomments"><h6>SEML-only comments</h6></a>
+                  <div id="semlcomments" class="collapse in">
+                    <p>
+                      SEML comments are used only for the sake of your SEML template; they will <span class="italic">not</span> be rendered in the final output.
+                      <br>
+                      You write them using the Lisp-like comment notation <code>;; Comment</code> (two semicolons).
+                      <div class="col-md-12">
+                        <blockquote class="code">
+                          <span class="codeCom">;; This is a SEML comment
+                          <br>
+                          &nbsp;;; it won't be rendered</span>
+                        </blockquote>
+                        <span class="legend">SEML</span>
+                      </div>
+                    </p>
+                  </div>
+                </div>
+                <div class="step first">
+                  <a data-toggle="collapse" data-parent="#guide" href="#htmlcomments"><h6>HTML comments</h6></a>
+                  <div id="htmlcomments" class="collapse in">
+                    <p>
+                      HTML comments are comments that will be rendered in the final output.
+                      <br>
+                      You write them using the Lisp-like comment notation <code>;; Comment</code> (two semicolons) inside a list.
+                      <div class="col-md-6">
+                        <blockquote class="code">
+                          <span class="codeCom">(;; This is an HTML comment)
+                            <br>
+                            &nbsp;(;; it will be rendered)</span>
+                        </blockquote>
+                        <span class="legend">SEML</span>
+                      </div>
+                      <div class="col-md-6">
+                        <blockquote class="code">
+                          <span class="codeCom">&lt;!-- This is an HTML comment --&gt;
+                            <br>
+                            &nbsp;&lt;!-- it will be rendered --&gt;</span>
+                        </blockquote>
+                        <span class="legend">HTML</span>
+                      </div>
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <hr>
+        </div>
+
+        <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+          <div class="row">
+            <h1 class="text-center">(Where to go from here)</h1>
+
+            <p class="text-center">
+              From now on, you should be able to write and compile most of your everyday templating tasks in SEML. Awesome! Pat yourself on the back.
+              <br>
+              There's still though a lot you can do to fully embrace SEML or help with the project.
+            </p>
+            <hr class="semi text-center">
+            <br>
+            <div class="row suggestion">
+              <div class="col-sm-3 hidden-xs">
+                <div class="v-center">
+                  <div class="content">
+                    <i class="fa fa-graduation-cap fa-4x fa-fw"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-9 text-right">
+                <h4>Read the documentation</h4>
+                <p>
+                  To become a SEML expert or simply find some more informations, you can check the comprehensive <a href="documentation.html" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="Documentation page">documentation</a>.
+                  If it doesn't solve your problem, you might try to <span class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="Contact form"><a href="" data-toggle="modal" data-target="#contactModal">contact us</a></span>.
+                </p>
+              </div>
+            </div>
+            <br>
+            <div class="row suggestion">
+              <div class="col-sm-9 text-left">
+                <h4>Contribute to the code</h4>
+                <p>
+                  There's no better way to learn something than diving right in its core. If you're interested, take a peek at the <a href="https://github.com/loganbraga/seml" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="Code on Github">source code</a>. You may even want to contribute something!
+                </p>
+              </div>
+              <div class="col-sm-3 hidden-xs">
+                <div class="v-center">
+                  <div class="content">
+                    <i class="fa fa-cogs fa-4x fa-fw"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row suggestion">
+              <div class="col-sm-3 hidden-xs">
+                <div class="v-center">
+                  <div class="content">
+                    <i class="fa fa-comments-o fa-4x fa-fw"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-9 text-right">
+                <h4>Spread the word</h4>
+                <p>
+                  We accept and value every support we can get. If you like SEML, talk about it! A big community is something we can all benefit from.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -376,7 +594,7 @@
                       <input class="form-control" placeholder="Enter email" name="email" type="email" required>
                     </div>
                     <div class="col-xs-4 pull-left">
-                      <button type="submit" id="form-button" class="btn btn-success"><i class="fa fa-check"></i>&nbsp;Subscribe</button>
+                      <button type="submit" id="form-button" class="btn btn-default"><i class="fa fa-check"></i>&nbsp;Subscribe</button>
                     </div>
                   </div>
                 </div>
@@ -395,7 +613,7 @@
                 <div class="col-md-3 centered talk-icon hidden-xs hidden-sm">
                   <div class="v-center">
                     <div class="content">
-                      <i class="fa fa-comments fa-5x"></i>
+                      <i class="fa fa-quote-right fa-4x"></i>
                     </div>
                   </div>
                 </div>
@@ -488,13 +706,13 @@
               <div class="content">
                 <h3><a href="#top" class="goto">SEML</a></h3>
                 <h6><a href="http://loganbraga.fr/" target="_blank">Logan Braga</a></h6>
-                <p><span class="copy">&copy;</span> Logan Braga <span class="copy">2014</span> - Licence GNU/GPL</p>
+                <p><span class="copy">&copy;</span> Logan Braga <span class="copy">2014</span> - <a href="https://github.com/loganbraga/seml/blob/master/LICENSE" target="_blank">License GNU/GPL</a></p>
               </div>
             </div>
             <div class="col-xs-4 pull-right text-right">
               <a href="http://reddit.com/" data-toggle="tooltip" class="tooltip-js" data-placement="left" title="Meet community on Reddit" target="_blank"><i class="fa fa-reddit fa-fw"></i></a>
               <a href="https://rubygems.org/" data-toggle="tooltip" class="tooltip-js" data-placement="left" title="Download gem on RubyGems" target="_blank"><i class="fa fa-cloud-download fa-fw"></i></a>
-              <a href="https://github.com/loganbraga" data-toggle="tooltip" class="tooltip-js" data-placement="left" title="Browse code on Github" target="_blank"><i class="fa fa-github fa-fw"></i></a>
+              <a href="https://github.com/loganbraga/seml" data-toggle="tooltip" class="tooltip-js" data-placement="left" title="Browse code on Github" target="_blank"><i class="fa fa-github fa-fw"></i></a>
             </div>
           </div>
         </div>
