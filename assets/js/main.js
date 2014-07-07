@@ -33,6 +33,7 @@ $(document).ready(function ($) {
     set_same_height_to($('.overview-text1'), $('.overview-img1'), -40);
     set_same_height_to($('.overview-text2'), $('.overview-img2'), -40);
     set_same_height_to($('.talk-wrapper'), $('.talk-icon'), 0);
+    set_same_height_to($('.suggestModel'), $('.suggestTarget'), 0);
   }
   set_height_for_all();
   $(window).resize(function() {
@@ -49,11 +50,11 @@ $(document).ready(function ($) {
   var closed = true;
   $('.collapseAll').click(function() {
     if (closed) {
-      $('#guide').find('.collapse').not("#beforeStart").collapse('show');
+      $('#guide').find('.collapse').not("#beforeStart, .minic").collapse('show');
       closed = false;
     }
     else {
-      $('#guide').find('.collapse').not("#beforeStart").collapse('hide');
+      $('#guide').find('.collapse').not("#beforeStart, .minic").collapse('hide');
       closed = true;
     }
   });

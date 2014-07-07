@@ -58,7 +58,7 @@
               <li><a href="#language">Language</a></li>
               <li><a href="#download">Download</a></li>
               <li><a href="#documentation">Quick Start</a></li>
-              <li><a href="#more">More</a></li>
+              <!-- <li><a href="#more">More</a></li> -->
             </ul>
           </div>
         </div>
@@ -116,7 +116,7 @@
               </blockquote>
             </div>
 
-            <i class="visible-sm visible-xs fa fa-angle-double-down fa-2x">&nbsp;</i>
+            <i class="visible-sm visible-xs fa fa-chevron-down fa-2x">&nbsp;</i>
 
             <div class="col-md-6">
               <div class="blockquoteTitle">
@@ -235,7 +235,7 @@
             <div class="row">
               <div class="col-md-4 centered feature">
                 <i class="fa fa-code fa-3x"></i>
-                <h4>Free Code</h4>
+                <h4>Free</h4>
                 <p>
                   SEML is <span class="italic">Free as in Freedom</span>, which means you are totally free to see, use, modify and share the source code while you maintain the <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="GNU/GPL website" >GNU/GPL license</a>.
                 </p>
@@ -249,7 +249,7 @@
               </div>
               <div class="col-md-4 centered feature">
                 <i class="fa fa-globe fa-3x"></i>
-                <h4>Multi Platform</h4>
+                <h4>Universal</h4>
                 <p>
                   SEML is packaged as a <a class="tooltip-js" href="https://rubygems.org/" data-toggle="tooltip" data-placement="bottom" title="RubyGems website" target="_blank">Ruby Gem</a>, allowing it to be seamlessly used and managed on all major operating systems.
                 </p>
@@ -390,7 +390,7 @@
                 </p>
                 <div class="step first">
                   <a data-toggle="collapse" data-parent="#guide" href="#atoms"><h6>Atoms</h6></a>
-                  <div id="atoms" class="collapse in">
+                  <div id="atoms" class="collapse in minic">
                     <p>
                       In traditional Lisp and in SEML, an atom is a part that can't be divided into something smaller on its own. That is, all of these things are valid atoms: <code>foo</code>, <code>+</code>, <code>132323</code>, <code>z</code> and <code>*abc123*</code>.
                       <br>
@@ -400,7 +400,7 @@
                 </div>
                 <div class="step first">
                   <a data-toggle="collapse" data-parent="#guide" href="#s-expr"><h6>S-Expressions</h6></a>
-                  <div id="s-expr" class="collapse in">
+                  <div id="s-expr" class="collapse in minic">
                     <p>
                       An S-Expression is, as wonderfully put by <a href="http://en.wikipedia.org/wiki/S-expression" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="S-Expressions on Wikipedia" target="_blank">Wikipedia</a>, either an <span class="italic">atom</span> or a group of two S-Expressions wrapped in parentheses. That is, <code>(+ 1 4)</code>, <code>(foo bar baz)</code>, <code>abc</code>, <code>(3 abc (zz y))</code> and <code>()</code> are all valid S-Expressions.
                       <br>
@@ -443,7 +443,7 @@
                 </p>
                 <div class="step first">
                   <a data-toggle="collapse" data-parent="#guide" href="#semlcomments"><h6>SEML-only comments</h6></a>
-                  <div id="semlcomments" class="collapse in">
+                  <div id="semlcomments" class="collapse in minic">
                     <p>
                       SEML comments are used only for the sake of your SEML template; they will <span class="italic">not</span> be rendered in the final output.
                       <br>
@@ -461,7 +461,7 @@
                 </div>
                 <div class="step first">
                   <a data-toggle="collapse" data-parent="#guide" href="#htmlcomments"><h6>HTML comments</h6></a>
-                  <div id="htmlcomments" class="collapse in">
+                  <div id="htmlcomments" class="collapse in minic">
                     <p>
                       HTML comments are comments that will be rendered in the final output.
                       <br>
@@ -487,7 +487,6 @@
                 </div>
               </div>
             </div>
-
           </div>
           <hr>
         </div>
@@ -504,7 +503,7 @@
             <hr class="semi text-center">
             <br>
             <div class="row suggestion">
-              <div class="col-sm-3 hidden-xs">
+              <div class="col-sm-3 hidden-xs suggestTarget">
                 <div class="v-center">
                   <div class="content">
                     <i class="fa fa-graduation-cap fa-4x fa-fw"></i>
@@ -519,7 +518,6 @@
                 </p>
               </div>
             </div>
-            <br>
             <div class="row suggestion">
               <div class="col-sm-9 text-left">
                 <h4>Contribute to the code</h4>
@@ -527,7 +525,7 @@
                   There's no better way to learn something than diving right in its core. If you're interested, take a peek at the <a href="https://github.com/loganbraga/seml" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="Code on Github">source code</a>. You may even want to contribute something!
                 </p>
               </div>
-              <div class="col-sm-3 hidden-xs">
+              <div class="col-sm-3 hidden-xs suggestTarget">
                 <div class="v-center">
                   <div class="content">
                     <i class="fa fa-cogs fa-4x fa-fw"></i>
@@ -535,16 +533,15 @@
                 </div>
               </div>
             </div>
-            <br>
             <div class="row suggestion">
-              <div class="col-sm-3 hidden-xs">
+              <div class="col-sm-3 hidden-xs suggestTarget">
                 <div class="v-center">
                   <div class="content">
                     <i class="fa fa-comments-o fa-4x fa-fw"></i>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-9 text-right">
+              <div class="col-sm-9 text-right suggestModel">
                 <h4>Spread the word</h4>
                 <p>
                   We accept and value every support we can get. If you like SEML, talk about it! A big community is something we can all benefit from.
@@ -556,9 +553,8 @@
       </div>
     </section>
 
-    <section id="more" name="more">
-    </section>
-
+    <!-- <section id="more" name="more"> -->
+    <!-- </section> -->
 
 
     <footer id="footer">
