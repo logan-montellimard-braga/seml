@@ -106,13 +106,13 @@
                 <i class="fa fa-tint" title="Toggle syntax highlighting">&nbsp;</i>
               </div>
               <blockquote class="smallerQuote code">
-                <span class="codeCom">;; This is a (sexy) comment</span>
+                <span class="codeCom">(;; This is a (sexy) comment)</span>
                 <br>
-                (<span class="codeDiv">section</span><span class="codeId">#home</span><span class="codeClass">.awesome</span>
+                &nbsp;(<span class="codeDiv">section</span><span class="codeId">#home</span><span class="codeClass">.awesome</span>
                 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;((<span class="codeDiv">h1</span> <span class="codeP">"This rocks !"</span>)
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((<span class="codeDiv">h1</span> <span class="codeP">"This rocks !"</span>)
                 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="codeDiv">p</span><span class="codeClass">.center</span> <span class="codeP">"What a wonderful language, isn't it ?"</span>)))
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="codeDiv">p</span><span class="codeClass">.center</span> <span class="codeP">"What a wonderful language, isn't it ?"</span>)))
               </blockquote>
             </div>
 
@@ -128,17 +128,17 @@
               <blockquote class="longuerQuote code">
                 <span class="codeCom">&lt;!-- This is a (sexy) comment --&gt;</span>
                 <br>
-                &lt;<span class="codeDiv">section</span> <span class="codeId">id</span>="home" <span class="codeClass">class</span>="awesome"&gt;
+                &nbsp;&lt;<span class="codeDiv">section</span> <span class="codeId">id</span>="<span class="codeId">home</span>" <span class="codeClass">class</span>="<span class="codeClass">awesome</span>"&gt;
                 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="codeDiv">h1</span>&gt;<span class="codeP">This rocks !</span>&lt;/<span class="codeDiv">h1</span>&gt;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="codeDiv">h1</span>&gt;<span class="codeP">This rocks !</span>&lt;/<span class="codeDiv">h1</span>&gt;
                 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="codeDiv">p</span> <span class="codeClass">class</span>="center"&gt;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="codeDiv">p</span> <span class="codeClass">class</span>="<span class="codeClass">center</span>"&gt;
                 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeP">What a wonderful language, isn't it ?</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeP">What a wonderful language, isn't it ?</span>
                 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="codeDiv">p</span>&gt;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="codeDiv">p</span>&gt;
                 <br>
-                &lt;/<span class="codeDiv">section</span>&gt;
+                &nbsp;&lt;/<span class="codeDiv">section</span>&gt;
               </blockquote>
             </div>
 
@@ -375,7 +375,7 @@
                   SEML follows POSIX conventions for command-line apps. Those three line above are equivalent: the first argument (here, 'html') is used to tell SEML you want to produce an HTML output (we explicitly state this, because SEML will soon be able to translate to CSS and XML files too).
                   <br>
                   <br>
-                  By default, your first argument is the input file (which can also be explicitly stated with -i or --input), and the second the output file (same with -o or --output).
+                  By default, your second argument is the input file (which can also be explicitly stated with -i or --input), and the third the output file (same with -o or --output).
                   <br>
                   If there's no output file, SEML will send its result to the standard terminal output. If there's no input, it will take it from standard terminal input.
                 </p>
@@ -383,7 +383,7 @@
             </div>
 
             <div class="step">
-              <a data-toggle="collapse" data-parent="#guide" href="#lispBases"><h4>Some Sexps basics</h4></a>
+              <a data-toggle="collapse" data-parent="#guide" href="#lispBases"><h4>Understanding Sexps</h4></a>
               <div id="lispBases" class="collapse">
                 <p>
                   Understanding the basics of S-Expressions is essential in order to fully master SEML.
@@ -412,13 +412,97 @@
             </div>
 
             <div class="step">
-              <a data-toggle="collapse" data-parent="#guide" href="#firstProg"><h4>Your first SEML</h4></a>
+              <a data-toggle="collapse" data-parent="#guide" href="#firstProg"><h4>Writing SEML</h4></a>
               <div id="firstProg" class="collapse">
                 <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                  vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                  no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                  Writing templates in SEML is pretty straight-forward; all you have to do is enclose your tags, which are atoms, inside parenthesis and follow the simple Sexps rules above. Piece of cake!
+                  <br>
+                  Parameters of the tags are what will be rendered inside them. They can be written after one or more whitespace after the tag atom. If a parameter is an atom, it can be written <span class="italic">as is</span>. If it is an S-Expression, it must be enclosed in parentheses. If there's more than one parameter, the whole group must be enclosed in parentheses too.
+                </p>
+                <p>
+                  For example, try to understand this little something:
+                  <div class="col-md-6">
+                    <blockquote class="code">
+                      (<span class="codeDiv">h1</span> <span class="codeP">"This is a title !"</span>)
+                      <br>
+                      &nbsp;(<span class="codeDiv">hr</span>)
+                      <br>
+                      &nbsp;(<span class="codeDiv">p</span> <span class="codeP">"And this a paragraph."</span>)
+                      <br>
+                      <br>
+                      <br>
+                    </blockquote>
+                    <span class="legend">SEML</span>
+                  </div>
+                  <div class="col-md-6">
+                    <blockquote class="code">
+                      &lt;<span class="codeDiv">h1</span>&gt;<span class="codeP">This is a title</span>&lt;/<span class="codeDiv">h1</span>&gt;
+                      <br>
+                     &nbsp;&lt;<span class="codeDiv">hr</span>&gt;
+                     <br>
+                     &nbsp;&lt;<span class="codeDiv">p</span>&gt;
+                     <br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeP">And this a paragraph.</span>
+                     <br>
+                     &nbsp;&lt;/<span class="codeDiv">p</span>&gt;
+                    </blockquote>
+                    <span class="legend">HTML</span>
+                  </div>
+                </p>
+                <p>
+                  See how you don't need to put parentheses around the arguments for <code>h1</code> and <code>p</code>? That's because the argument is an atom (here, a string).
+                </p>
+                <p>
+                  In this next example, we use <span class="italic">nested</span> arguments. That is, S-Expressions arguments. Doesn't that sound exciting?
+                </p>
+                <div class="col-md-6">
+                  <blockquote class="code">
+                    (<span class="codeDiv">section</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="codeDiv">div</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="codeDiv">h3</span> <span class="codeP">"Oi y'all!"</span>)
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="codeDiv">p</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="codeP">"Woaw, a paragraph!"</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeDiv">br</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeP">"Still inside!"</span>))))
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                  </blockquote>
+                  <span class="legend">SEML</span>
+                </div>
+                <div class="col-md-6">
+                  <blockquote class="code">
+                    &lt;<span class="codeDiv">section</span>&gt;
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="codeDiv">div</span>&gt;
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="codeDiv">h3</span>&gt;<span class="codeP">Oi y'all!</span>&lt;/<span class="codeDiv">h3</span>&gt;
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="codeDiv">p</span>&gt;
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeP">Woaw, a paragraph.</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="codeDiv">br</span>&gt;
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="codeP">Still inside!</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="codeDiv">p</span>&gt;
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="codeDiv">div</span>&gt;
+                    <br>
+                    &lt;/<span class="codeDiv">section</span>&gt;
+                  </blockquote>
+                  <span class="legend">HTML</span>
+                </div>
+                <p>
+                  Pretty neat, if you ask me.
                 </p>
               </div>
             </div>
@@ -427,10 +511,56 @@
               <a data-toggle="collapse" data-parent="#guide" href="#attributes"><h4>Adding attributes</h4></a>
               <div id="attributes" class="collapse">
                 <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                  vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                  no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                  Adding attributes in SEML is, again, fairly easy. The syntax in inspired from CSS syntax, and <a href="http://haml.info" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="Haml website" target="_blank">Haml</a>.
+                  You simply use CSS selectors: <code>#myID</code> for IDs and <code>.myClass</code> for classes.
+                </p>
+                <div class="col-md-6">
+                  <blockquote class="code">
+                    (<span class="codeDiv">div</span><span class="codeId">#menu</span><span class="codeClass">.center.collapse</span>)
+                    <br>
+                    <br>
+                    <br>
+                  </blockquote>
+                  <span class="legend">SEML</span>
+                </div>
+                <div class="col-md-6">
+                  <blockquote class="code">
+                    &nbsp;&lt;<span class="codeDiv">div</span> <span class="codeId">id</span>="<span class="codeId">menu</span>" <span class="codeClass">class</span>="<span class="codeClass">center collapse</span>"&gt;
+                    <br>
+                    &nbsp;&lt;/<span class="codeDiv">div</span>&gt;
+                  </blockquote>
+                  <span class="legend">HTML</span>
+                </div>
+                <p>
+                  You can obviously combine them all the way you want, in any order. Classes can be cumulated; multiple or non-unique IDs will raise an error.
+                </p>
+              </div>
+            </div>
+
+            <div class="step">
+              <a data-toggle="collapse" data-parent="#guide" href="#entities"><h4>Escaping entities</h4></a>
+              <div id="entities" class="collapse">
+                <p>
+                  Special HTML characters are automatically escaped into valid HTML entities in SEML. No worries!
+                </p>
+                <div class="col-md-6">
+                  <blockquote class="code">
+                    éôü&><
+                    <br>
+                    &nbsp;&amp;eacute;
+                  </blockquote>
+                  <span class="legend">SEML</span>
+                </div>
+                <div class="col-md-6">
+                  <blockquote class="code">
+                    &amp;eacute;&amp;ocirc;&amp;uuml;&amp;amp;&amp;gt;&amp;lt;
+                    <br>
+                    &nbsp;&amp;amp;eacute;
+                  </blockquote>
+                  <span class="legend">HTML</span>
+                </div>
+                <p>
+                  Don't start escaping them yourself if you're not sure you should do it or bad things will happen, as seen in the second line.
                 </p>
               </div>
             </div>
@@ -451,8 +581,8 @@
                       <div class="col-md-12">
                         <blockquote class="code">
                           <span class="codeCom">;; This is a SEML comment
-                          <br>
-                          &nbsp;;; it won't be rendered</span>
+                            <br>
+                            &nbsp;;; it won't be rendered</span>
                         </blockquote>
                         <span class="legend">SEML</span>
                       </div>
@@ -487,6 +617,19 @@
                 </div>
               </div>
             </div>
+
+            <div class="step">
+              <a data-toggle="collapse" data-parent="#guide" href="#sugar"><h4>Simplifying it all</h4></a>
+              <div id="sugar" class="collapse">
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                  vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                  no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+            </div>
+
           </div>
           <hr>
         </div>
@@ -522,7 +665,7 @@
               <div class="col-sm-9 text-left">
                 <h4>Contribute to the code</h4>
                 <p>
-                  There's no better way to learn something than diving right in its core. If you're interested, take a peek at the <a href="https://github.com/loganbraga/seml" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="Code on Github">source code</a>. You may even want to contribute something!
+                  There's no better way to learn something than diving right into its core. If you're interested, take a peek at the <a href="https://github.com/loganbraga/seml" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="Code on Github">source code</a>. You may even want to contribute something!
                 </p>
               </div>
               <div class="col-sm-3 hidden-xs suggestTarget">
@@ -687,7 +830,7 @@
                   </div>
                 </div>
                 <br>
-                <button type="submit" name="sendContactForm" id="sendContactForm" class="btn btn-lg btn-warning"><i class="fa fa-check"></i> Send</button>
+                <button type="submit" name="sendContactForm" id="sendContactForm" class="btn btn-lg btn-success"><i class="fa fa-check"></i> Send</button>
                 <button type="reset" id="formReset" class="btn btn-default btn-lg"><i class="fa fa-times"></i> Reset</button>
               </form>
             </div>
