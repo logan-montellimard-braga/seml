@@ -251,7 +251,7 @@
                 <i class="fa fa-globe fa-3x"></i>
                 <h4>Universal</h4>
                 <p>
-                  SEML is packaged as a <a class="tooltip-js" href="https://rubygems.org/" data-toggle="tooltip" data-placement="bottom" title="RubyGems website" target="_blank">Ruby Gem</a>, allowing it to be seamlessly used and managed on all major operating systems.
+                  SEML is packaged as a <a class="tooltip-js" href="https://rubygems.org/" data-toggle="tooltip" data-placement="bottom" title="RubyGems website" target="_blank">Ruby Gem</a>, allowing it to be seamlessly used, managed and shared on all major operating systems.
                 </p>
               </div>
             </div>
@@ -510,30 +510,55 @@
             <div class="step">
               <a data-toggle="collapse" data-parent="#guide" href="#attributes"><h4>Adding attributes</h4></a>
               <div id="attributes" class="collapse">
-                <p>
-                  Adding attributes in SEML is, again, fairly easy. The syntax in inspired from CSS syntax, and <a href="http://haml.info" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="Haml website" target="_blank">Haml</a>.
-                  You simply use CSS selectors: <code>#myID</code> for IDs and <code>.myClass</code> for classes.
-                </p>
-                <div class="col-md-6">
-                  <blockquote class="code">
-                    (<span class="codeDiv">div</span><span class="codeId">#menu</span><span class="codeClass">.center.collapse</span>)
-                    <br>
-                    <br>
-                    <br>
-                  </blockquote>
-                  <span class="legend">SEML</span>
+                <div class="step first">
+                  <a data-toggle="collapse" data-parent="#guide" href="#attrs"><h6>All attributes</h6></a>
+                  <div id="attrs" class="collapse in minic">
+                    <p>
+                      Adding attributes in SEML is fairly easy. You just have to use an exclamation mark next to the tag, followed by an equal sign and the value of the attribute. This results in something like this :
+                    </p>
+                    <div class="col-md-6">
+                      <blockquote class="code">
+                        (<span class="codeDiv">img</span><span class="codeAttr">!src</span>="<span class="codeCom">foo.png</span><span class="codeAttr">"!title</span>="<span class="codeCom">Bar</span>")
+                      </blockquote>
+                      <span class="legend">SEML</span>
+                    </div>
+                    <div class="col-md-6">
+                      <blockquote class="code">
+                        &nbsp;&lt;<span class="codeDiv">img</span> <span class="codeAttr">src</span>="<span class="codeCom">foo.png</span>" <span class="codeAttr">title</span>="<span class="codeCom">Bar</span>"&gt;
+                      </blockquote>
+                      <span class="legend">HTML</span>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <blockquote class="code">
-                    &nbsp;&lt;<span class="codeDiv">div</span> <span class="codeId">id</span>="<span class="codeId">menu</span>" <span class="codeClass">class</span>="<span class="codeClass">center collapse</span>"&gt;
-                    <br>
-                    &nbsp;&lt;/<span class="codeDiv">div</span>&gt;
-                  </blockquote>
-                  <span class="legend">HTML</span>
+                <div class="step first">
+                  <a data-toggle="collapse" data-parent="#guide" href="#classesAndIds"><h6>Classes and IDs</h6></a>
+                  <div id="classesAndIds" class="collapse in minic">
+                    <p>
+                      Because classes and IDs are so common, SEML provides a way to write them more comfortably. The syntax in inspired from CSS syntax, and <a href="http://haml.info" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="Haml website" target="_blank">Haml</a>.
+                      You simply use CSS selectors: <code>#myID</code> for IDs and <code>.myClass</code> for classes.
+                    </p>
+                    <div class="col-md-6">
+                      <blockquote class="code">
+                        (<span class="codeDiv">div</span><span class="codeId">#menu</span><span class="codeClass">.center.collapse</span>)
+                        <br>
+                        <br>
+                        <br>
+                      </blockquote>
+                      <span class="legend">SEML</span>
+                    </div>
+                    <div class="col-md-6">
+                      <blockquote class="code">
+                        &nbsp;&lt;<span class="codeDiv">div</span> <span class="codeId">id</span>="<span class="codeId">menu</span>" <span class="codeClass">class</span>="<span class="codeClass">center collapse</span>"&gt;
+                        <br>
+                        &nbsp;&lt;/<span class="codeDiv">div</span>&gt;
+                      </blockquote>
+                      <span class="legend">HTML</span>
+                    </div>
+                    <p>
+                      You can obviously combine them all the way you want, in any order. Classes can be cumulated; multiple or non-unique IDs are semantically incorrect, but won't raise any error.
+                    </p>
+                  </div>
                 </div>
-                <p>
-                  You can obviously combine them all the way you want, in any order. Classes can be cumulated; multiple or non-unique IDs will raise an error.
-                </p>
               </div>
             </div>
 
@@ -622,11 +647,39 @@
               <a data-toggle="collapse" data-parent="#guide" href="#sugar"><h4>Simplifying it all</h4></a>
               <div id="sugar" class="collapse">
                 <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                  vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                  no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                  SEML comes bundled with a lot of syntactic sugar for frequently used idioms. 
+                  <br>
+                  A syntactic sugar is called by using the star-variable notation, popular (well, not so) amongst Lispers. For example, you can do this:
                 </p>
+                <div class="col-md-6">
+                  <blockquote class="code">
+                    (<span class="codeDiv">*doctype*</span>)
+                  </blockquote>
+                  <span class="legend">SEML</span>
+                </div>
+                <div class="col-md-6">
+                  <blockquote class="code">
+                    <span class="codeCom">&lt;! DOCTYPE HTML&gt;</span>
+                  </blockquote>
+                  <span class="legend">HTML</span>
+                </div>
+              <p>
+                Or, similarly, this:
+              </p>
+                <div class="col-md-6">
+                  <blockquote class="code">
+                    (<span class="codeDiv">*utf8*</span>)
+                  </blockquote>
+                  <span class="legend">SEML</span>
+                </div>
+                <div class="col-md-6">
+                  <blockquote class="code">
+                    &lt;<span class="codeDiv">meta</span> charset="<span class="codeCom">utf-8</span>"&gt;
+                  </blockquote>
+                  <span class="legend">HTML</span>
+                </div>
+                <p>
+                  You can get an exhaustive list of all syntactic sugars in SEML in the <a href="documentation.html" class="tooltip-js" data-toggle="tooltip" data-placement="bottom" title="Documentation page">documentation</a>.
               </div>
             </div>
 
@@ -849,8 +902,8 @@
               </div>
             </div>
             <div class="col-xs-4 pull-right text-right">
-              <a href="http://reddit.com/" data-toggle="tooltip" class="tooltip-js" data-placement="left" title="Meet community on Reddit" target="_blank"><i class="fa fa-reddit fa-fw"></i></a>
               <a href="https://rubygems.org/" data-toggle="tooltip" class="tooltip-js" data-placement="left" title="Download gem on RubyGems" target="_blank"><i class="fa fa-cloud-download fa-fw"></i></a>
+              <a href="https://bitbucket.com/" data-toggle="tooltip" class="tooltip-js" data-placement="left" title="Browse code on Bitbucket" target="_blank"><i class="fa fa-bitbucket fa-fw"></i></a>
               <a href="https://github.com/loganbraga/seml" data-toggle="tooltip" class="tooltip-js" data-placement="left" title="Browse code on Github" target="_blank"><i class="fa fa-github fa-fw"></i></a>
             </div>
           </div>

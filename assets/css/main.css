@@ -444,6 +444,9 @@ blockquote.code {
   blockquote.code .codeDiv {
     font-weight: bold;
     color: #72918b; }
+  blockquote.code .codeAttr {
+    font-style: italic;
+    color: #94ca78; }
   blockquote.code .codeId {
     color: #d9534f; }
   blockquote.code .codeClass {

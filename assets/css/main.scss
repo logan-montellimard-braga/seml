@@ -634,6 +634,10 @@ blockquote.code {
     font-weight: bold;
     color: $myBlue;
   }
+  .codeAttr {
+    font-style: italic;
+    color: $myGreen;
+  }
   .codeId {
     color: $myRed;
   }
