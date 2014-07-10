@@ -366,16 +366,15 @@
                   Wait, now you may be wondering <span class="italic">how</span> that compilation was done. It's rather simple, in fact:
                   <br>
                   <code class="block">
-                    <span class="bold">seml</span> html myFile.seml myOutput.html
+                    <span class="bold">seml</span> myFile.seml myOutput.html
                     <br>
-                    <span class="bold">seml</span> html <span class="bold">-i</span> myFile.seml <span class="bold">-o</span> myOutput.html
+                    <span class="bold">seml</span> <span class="bold">-i</span> myFile.seml <span class="bold">-o</span> myOutput.html
                     <br>
-                    <span class="bold">seml</span> html <span class="bold">--input=</span>myFile.seml <span class="bold">--output=</span>myOutput.html
+                    <span class="bold">seml</span> <span class="bold">--input=</span>myFile.seml <span class="bold">--output=</span>myOutput.html
                   </code>
-                  SEML follows POSIX conventions for command-line apps. Those three line above are equivalent: the first argument (here, 'html') is used to tell SEML you want to produce an HTML output (we explicitly state this, because SEML will soon be able to translate to CSS and XML files too).
+                  SEML follows POSIX conventions for command-line apps. Those three line above are equivalent.
                   <br>
-                  <br>
-                  By default, your second argument is the input file (which can also be explicitly stated with -i or --input), and the third the output file (same with -o or --output).
+                  By default, your first argument is the input file (which can also be explicitly stated with -i or --input), and the second the output file (same with -o or --output).
                   <br>
                   If there's no output file, SEML will send its result to the standard terminal output. If there's no input, it will take it from standard terminal input.
                 </p>
@@ -810,28 +809,29 @@
                   </div>
                 </div>
                 <h4 class="text-center">They talk about SEML</h4>
+                <p class="text-center mini">Yeah, about that... We could really use some quotes here. Care to send us words?</p>
                 <div class="col-md-3 col-sm-10 col-sm-offset-1 col-md-offset-0 feature">
                   <blockquote>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                      SEML is a delightful little DSL. I can't imagine living without it. Keep up the good work, pal!
                     </p>
-                    <cite class="pull-right">John Doe</cite>
+                    <cite class="pull-right">Logan Braga</cite>
                   </blockquote>
                 </div>
                 <div class="col-md-3 col-sm-10 col-sm-offset-1 col-md-offset-0 feature">
                   <blockquote>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                      Being one of the few remaining Lisper in the world, I was feeling rejected by the other templating tools. No more, thanks to SEML.
                     </p>
-                    <cite class="pull-right">John Doe</cite>
+                    <cite class="pull-right">Internet Stranger</cite>
                   </blockquote>
                 </div>
                 <div class="col-md-3 col-sm-10 col-sm-offset-1 col-md-offset-0 feature">
                   <blockquote>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                      My templating tasks used to be lame and repetitive. That was before I met SEML. This rocks!
                     </p>
-                    <cite class="pull-right">John Doe</cite>
+                    <cite class="pull-right">Logan Braga's Mom</cite>
                   </blockquote>
                 </div>
               </div>
