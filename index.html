@@ -7,12 +7,13 @@
 <!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Logan Braga">
     <meta name="description" content="SEML (S-Expression Markup Language) project page. Markup language using LISP-style expressions.">
+    <meta name="keywords" content="S-expressions markup language html templating ruby gem">
 
-    <title>The SEML Project</title>
+    <title>The SEML Project &middot; Powerful S-Expression Markup Language</title>
 
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
@@ -58,7 +59,6 @@
               <li><a href="#language">Language</a></li>
               <li><a href="#download">Download</a></li>
               <li><a href="#documentation">Quick Start</a></li>
-              <!-- <li><a href="#more">More</a></li> -->
             </ul>
           </div>
         </div>
@@ -77,10 +77,10 @@
     </div>
 
 
-    <section id="home" name="home">
+    <section id="home">
       <div class="v-center">
         <div class="content">
-          <img class="logo "src="assets/img/logo_blanc.png" alt="SEML Logo"/>
+          <img class="logo" src="assets/img/logo_blanc.png" alt="SEML Logo"/>
           <h1>(SEML)</h1>
           <h2>(<span class="maj">S</span>-<span class="maj">E</span>xpression <span class="maj">M</span>arkup <span class="maj">L</span>anguage)</h2>
           <p>No such thing as too many parentheses.</p>
@@ -90,7 +90,7 @@
       </div>
     </section>
 
-    <section id="language" name="language">
+    <section id="language">
       <div class="container">
 
         <div class="row centered">
@@ -261,7 +261,7 @@
       </div>
     </section>
 
-    <section id="download" name="download">
+    <section id="download">
       <div class="container">
         <div class="col-sm-10 col-sm-offset-1">
           <div class="row">
@@ -325,7 +325,7 @@
       </div>
     </section>
 
-    <section id="documentation" name="documentation">
+    <section id="documentation">
       <div class="container">
         <div class="col-md-8 col-sm-10 col-md-offset-2 col-sm-offset-1">
           <div class="row centered">
@@ -420,6 +420,7 @@
                 </p>
                 <p>
                   For example, try to understand this little something:
+                </p>
                   <div class="col-md-6">
                     <blockquote class="code">
                       (<span class="codeDiv">h1</span> <span class="codeP">"This is a title !"</span>)
@@ -447,7 +448,6 @@
                     </blockquote>
                     <span class="legend">HTML</span>
                   </div>
-                </p>
                 <p>
                   See how you don't need to put parentheses around the arguments for <code>h1</code> and <code>p</code>? That's because the argument is an atom (here, a string).
                 </p>
@@ -569,7 +569,7 @@
                 </p>
                 <div class="col-md-6">
                   <blockquote class="code">
-                    éôü&><
+                    éôü&amp;&gt;&lt;
                     <br>
                     &nbsp;&amp;eacute;
                   </blockquote>
@@ -602,6 +602,7 @@
                       SEML comments are used only for the sake of your SEML template; they will <span class="italic">not</span> be rendered in the final output.
                       <br>
                       You write them using the Lisp-like comment notation <code>;; Comment</code> (two semicolons).
+                    </p>
                       <div class="col-md-12">
                         <blockquote class="code">
                           <span class="codeCom">;; This is a SEML comment
@@ -610,7 +611,6 @@
                         </blockquote>
                         <span class="legend">SEML</span>
                       </div>
-                    </p>
                   </div>
                 </div>
                 <div class="step first">
@@ -620,6 +620,7 @@
                       HTML comments are comments that will be rendered in the final output.
                       <br>
                       You write them using the Lisp-like comment notation <code>;; Comment</code> (two semicolons) inside a list.
+                    </p>
                       <div class="col-md-6">
                         <blockquote class="code">
                           <span class="codeCom">(;; This is an HTML comment)
@@ -637,7 +638,6 @@
                         <span class="legend">HTML</span>
                       </div>
                     </div>
-                  </p>
                 </div>
               </div>
             </div>
@@ -748,9 +748,6 @@
       </div>
     </section>
 
-    <!-- <section id="more" name="more"> -->
-    <!-- </section> -->
-
 
     <footer id="footer">
       <div class="top">
@@ -763,7 +760,7 @@
               </p>
             </div>
             <div class="col-sm-6 text-right form-email col-xs-12 hidden-xs">
-              <form id="subscribe-form" class="form-inline" role="form" action="" method="post">
+              <form id="subscribe-form" class="form-inline" role="form" action="#" method="post">
                 <div class="form-group">
                   <div class="input-group">
                     <input class="form-control" placeholder="Enter email" name="email" type="email" required>
@@ -778,14 +775,14 @@
             </div>
 
             <div class="col-sm-6 centered form-email col-xs-12 visible-xs">
-              <form id="subscribe-form-mini" class="form-inline" role="form" action="" method="post">
+              <form id="subscribe-form-mini" class="form-inline" role="form" action="#" method="post">
                 <div class="form-group">
                   <div class="input-group">
                     <div class="col-xs-8 pull-right">
                       <input class="form-control" placeholder="Enter email" name="email" type="email" required>
                     </div>
                     <div class="col-xs-4 pull-left">
-                      <button type="submit" id="form-button" class="btn btn-default"><i class="fa fa-check"></i>&nbsp;Subscribe</button>
+                      <button type="submit" id="form-button-mini" class="btn btn-default"><i class="fa fa-check"></i>&nbsp;Subscribe</button>
                     </div>
                   </div>
                 </div>
@@ -855,7 +852,7 @@
         </div>
       </div>
 
-      <div id="contactModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div id="contactModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -863,7 +860,7 @@
               <h3 class="modal-title" id="myModalLabel">Contact us</h3>
             </div>
             <div class="modal-body">
-              <form id="contactForm" role="form" action="" method="post" enctype="plain">
+              <form id="contactForm" role="form" action="#" method="post" enctype="text/plain">
                 <div class="form-group">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
