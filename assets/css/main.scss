@@ -269,6 +269,7 @@ hr {
 }
 .feature {
   padding: 20px;
+  padding-bottom: 0px;
   margin-top: 10px;
 
   &:hover {
@@ -382,6 +383,11 @@ hr {
 
 footer {
   background-color: $myGrey4;
+  font-size: 0.95em;
+
+  p {
+    line-height: 24px;
+  }
 
   .middle {
     padding: 15px 0px;

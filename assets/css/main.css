@@ -198,6 +198,7 @@ hr {
 
 .feature {
   padding: 20px;
+  padding-bottom: 0px;
   margin-top: 10px; }
   .feature:hover {
     opacity: 0.9; }
@@ -269,7 +270,10 @@ hr {
   height: 500px; }
 
 footer {
-  background-color: #333333; }
+  background-color: #333333;
+  font-size: 0.95em; }
+  footer p {
+    line-height: 24px; }
   footer .middle {
     padding: 15px 0px;
     padding-bottom: 30px;
